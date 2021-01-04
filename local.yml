@@ -29,5 +29,4 @@
     dconf:
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
-      become_user: "{{ ansible_user }}"
 
