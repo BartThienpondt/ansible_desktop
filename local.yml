@@ -18,13 +18,16 @@
       owner: root
       group: root
 
+  - name: set wallpaper
+    become_user: bartthienpondt
+    dconf:
+      key: "/org/gnome/desktop/background/picture-uri"
+      value: "'file:///usr/share/backgrounds/WP.jpeg'"
+
   - name: set wallpaper position
+    become_user: bartthienpondt
     dconf:
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
       become_user: "{{ ansible_user }}"
 
-  - name: set wallpaper
-    dconf:
-      key: "/org/gnome/desktop/background/picture-uri"
-      value: "'file:///usr/share/backgrounds/WP.jpeg'"
